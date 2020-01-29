@@ -1,9 +1,9 @@
-var POS_X = 130;
-var FIRST_POS_Y = 240;
-var LAST_POS_Y = 80;
-var WIDTH_SPACE = 40;
-var BAR_WIDTH = 50;
-var BAR_HEIGHT = 60;
+var POS_X = 150;
+var FIRST_POS_Y = 245;
+var LAST_POS_Y = 75;
+var WIDTH_SPACE = 50;
+var BAR_WIDTH = 40;
+var BAR_HEIGHT = 150;
 
 var getMaxElement = function (arr) {
   var maxElement = arr[0];
@@ -36,13 +36,11 @@ window.renderStatistics = function (ctx, names, times) {
       ctx.fillRect(POS_X + (WIDTH_SPACE + BAR_WIDTH) * i, FIRST_POS_Y - ((BAR_HEIGHT * times[i]) / maxTime), BAR_WIDTH, (BAR_HEIGHT * times[i]) / maxTime);
 
     } else {
-      ctx.fillStyle = 'blue';
+      ctx.fillStyle = 'hsl(255, 100%, ${10% * i})';
       ctx.fillRect(POS_X + (WIDTH_SPACE + BAR_WIDTH) * i, FIRST_POS_Y - ((BAR_HEIGHT * times[i]) / maxTime), BAR_WIDTH, (BAR_HEIGHT * times[i]) / maxTime);
-
     }
 
     ctx.fillStyle = 'black';
-
     ctx.fillText(names[i], POS_X + (WIDTH_SPACE + BAR_WIDTH) * i, FIRST_POS_Y + 10);
     ctx.fillText(Math.round(times[i]), POS_X + (WIDTH_SPACE + BAR_WIDTH) * i, LAST_POS_Y);
   }
