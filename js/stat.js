@@ -1,3 +1,5 @@
+'use strict';
+
 var POS_X = 150;
 var FIRST_POS_Y = 245;
 var LAST_POS_Y = 75;
