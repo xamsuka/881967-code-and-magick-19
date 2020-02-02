@@ -6,6 +6,7 @@ var LAST_POS_Y = 75;
 var WIDTH_SPACE = 50;
 var BAR_WIDTH = 40;
 var BAR_HEIGHT = 150;
+var barColor = 'red';
 
 var getMaxElement = function (arr) {
   var maxElement = arr[0];
@@ -38,7 +39,9 @@ window.renderStatistics = function (ctx, names, times) {
       ctx.fillRect(POS_X + (WIDTH_SPACE + BAR_WIDTH) * i, FIRST_POS_Y - ((BAR_HEIGHT * times[i]) / maxTime), BAR_WIDTH, (BAR_HEIGHT * times[i]) / maxTime);
 
     } else {
-      ctx.fillStyle = 'hsl(255, 100%, ${10% * i})';
+    // barColor = Math.floor((Math.random() * 100) + 1);
+      barColor = 'hsl(255, ' + Math.floor((Math.random() * 100) + 1) + '%' + ', 25%)';
+      ctx.fillStyle = barColor;
       ctx.fillRect(POS_X + (WIDTH_SPACE + BAR_WIDTH) * i, FIRST_POS_Y - ((BAR_HEIGHT * times[i]) / maxTime), BAR_WIDTH, (BAR_HEIGHT * times[i]) / maxTime);
     }
 
