@@ -13,7 +13,7 @@ blockSimilar.classList.remove('hidden');
 var getRandomElement = function (arr) {
   var randomElement = arr[Math.floor(Math.random() * arr.length)];
   return randomElement;
-}
+};
 
 var generateHero = function () {
   var personal = [];
